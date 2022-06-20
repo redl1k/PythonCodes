@@ -1,5 +1,4 @@
 ##code1
-
 list = ['Buzdanov Andrian']
 fio = (input("Введи:"))
 check = list
