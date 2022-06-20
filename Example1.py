@@ -1,4 +1,4 @@
-# zadanie_1
+##code1
 
 list = ['Buzdanov Andrian']
 fio = (input("Введи:"))
@@ -8,7 +8,7 @@ if fio in check[0]:
 else:
     print(f'Введенный вами пользователь {fio} не найден  в строке {list}')
 
-# zadanie_2
+##code2
 vlan = [10, 20, 30, 40]
 vlan_id_input = input("Введи Vlan: ")
 if vlan_id_input.isdigit():
@@ -26,21 +26,24 @@ if vlan_int not in vlan:
 else:
     print(f'VLAN {vlan_int} уже содержится в списке {vlan}')
 
-# zadanie_3
+##code3
 import re
-login = input('Введите пользователя:')
 def validate():
     while True:
+        login = input('Введите пользователя:')
         password = input("Enter a password:")
         if len(password) < 16:
             print("Убедитесь, что ваш пароль состоит как минимум из 16 букв")
-        elif login in password is None:
+        elif re.search('[login]', password) is None:
             print('Пароль содержит имя пользователя')
         elif re.search('[0-9]', password) is None:
             print("Убедитесь, что в вашем пароле есть цифры")
         elif re.search('[A-Z]', password) is None:
             print("Убедитесь, что в вашем пароле есть заглавная буква")
+        elif re.search('[a-z]', password) is None:
+            print("Убедитесь, что в вашем пароле есть строчные буквы")
         else:
             print(f'Пароль для пользователя "{login}" установлен')
         break
 validate()
+
